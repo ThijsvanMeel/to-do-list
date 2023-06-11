@@ -1,3 +1,36 @@
 .achtergrond {
-    background-color: grey;
+    background-color: #F5F5F4;
+    height: 100%;
 }
+.table td, .table th {
+    padding: 10px !important;
+}
+nav {
+    padding: 0px !important;
+}
+h1 {
+    font-size: 50px;
+    padding-top: 40px;
+}
+.button {
+  filter: drop-shadow(2px 2px 2px #000);
+}
+.zoekbalk {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.mt-5 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+input {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+.hoi {
+    height: 53vh;
+}
+   
