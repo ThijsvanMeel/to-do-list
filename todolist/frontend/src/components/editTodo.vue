@@ -1,47 +1,58 @@
 <template>
-  <div>
-      <div class="field">
-    <label class="label">Todo</label>
-    <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Vul hier in wat je wilt gaan doen"
-        v-model="todonaam"
-      />
-    </div>
-  </div>
+  <router-link to="/" class="back-button">
+      <span class="back-arrow">&lt;</span>
+    </router-link>
+  <img class="header" src="../assets/header.png">
+  <div class="inputfields">
+    <div class="card geenfullwidth">
+      <div class="card-content">
+        <h2 class="voegtodotoe">Bewerk je todo</h2>
+        <div class="field">
+          <label class="label">Todo</label>
+          <div class="control">
+            <input
+              class="inputedit"
+              type="text"
+              placeholder="Vul hier in wat je wilt doen"
+              v-model="todonaam"
+            />
+          </div>
+        </div>
 
-  <div class="field">
-    <label class="label">Todo categorie</label>
+        <div class="field field2">
+          <label class="label">Todo categorie</label>
+          <div class="control">
+            <input
+              class="inputedit"
+              type="text"
+              placeholder="Onder welke categorie?"
+              v-model="todocatogorie"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="control">
-      <input
-        class="input"
-        type="text"
-        placeholder="Onder welke categorie valt het?"
-        v-model="todocatogorie"
-      />
+      <button class="button mooieknop2" @click="updateTodo">OPSLAAN</button>
     </div>
   </div>
-  <div class="control">
-    <button class="button is-success" @click="updateTodo">OPSLAAN</button>
-  </div>
-  </div>  
-   
 </template>
-  
+
 <script>
-  
 import axios from "axios";
+
 export default {
-data() {
-  return {
-    todonaam: "",
-    todocatogorie: "",
-  };
-},
-methods: {
-    //todo ophalen id
+  data() {
+    return {
+      todonaam: "",
+      todocatogorie: "",
+    };
+  },
+  created() {
+    this.getTodoById();
+  },
+  methods: {
     async getTodoById() {
       try {
         const response = await axios.get(
@@ -53,8 +64,6 @@ methods: {
         console.log(err);
       }
     },
-
-    //update todo
     async updateTodo() {
       try {
         await axios.put(
@@ -64,7 +73,8 @@ methods: {
             todo_catogorie: this.todocatogorie,
           }
         );
-        (this.productName = ""), (this.todocatogorie = "");
+        this.todonaam = "";
+        this.todocatogorie = "";
         this.$router.push("/");
       } catch (err) {
         console.log(err);
@@ -73,4 +83,8 @@ methods: {
   },
 };
 </script>
+
+<style>
+  @import url(../css/opmaak.css);
+</style>
   

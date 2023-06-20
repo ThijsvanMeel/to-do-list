@@ -9,8 +9,10 @@ nav {
     padding: 0px !important;
 }
 h1 {
-    font-size: 50px;
-    padding-top: 40px;
+    font-size: 30px;
+    display: flex;
+    font-weight: 700;
+    margin-left: 10%;
 }
 .button {
   filter: drop-shadow(2px 2px 2px #000);
@@ -19,10 +21,19 @@ h1 {
     display: flex;
     text-align: center;
     margin-bottom: 20px;
+    background: linear-gradient(90deg, rgba(65,211,254,1) 0%, rgba(36,113,255,1) 100%);
+    border: none;
+    width: 80%;
+    height: 27px;
+    border-radius: 12px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+}
+.zoekbalk::placeholder {
+    color: white;
 }
 .mt-5 {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 input {
     display: block;
@@ -33,4 +44,126 @@ input {
 .hoi {
     height: 53vh;
 }
+.mooieknop {
+    bottom: 0px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 34px;
+    background-color: #2471ff;
+    color: white;
+    height: 65px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.mooieknop2 {
+    width: 60%;
+    border-radius: 34px;
+    background-color: #2471ff;
+    color: white;
+    height: 65px;
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 40px;
+    border: none;
+}
+
+div.columns 
+
+  p {
+    font-family: calibri;
+    font-size: 20px;
+  }
+
+  p.has-text-danger {
+    margin-left: 90px;
+  }
+
+  .card-header-title {
+    font-size: 20px;
+  }
+  .column {
+    padding-bottom: 20px;
+  }
+  
+.completed-card {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .datumentijd {
+    display: flex;
+    margin-left: 10%;
+    margin-bottom: 25px;
+  }
    
+  .column.is-offset-one-quarter {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .card {
+    border-radius: 15px;
+  }
+  .card.completed {
+    opacity: 0.5;
+  }
+  .inputedit {
+    font-family: inherit;
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 20px;
+  color: gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  text-align: center;
+  }
+  .inputfields {
+    margin-top: -50px;
+  }
+  .field2 {
+    margin-top: 40px;
+  }
+  .opvulling {
+    height: 250px;
+  }
+  .voegtoe {
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .pijltje {
+    font-size: 50px;
+    margin-top: 15px;
+    
+  }
+ .card {
+  width: 80% !important;
+  margin: 0 auto;
+ }
+ .voegtodotoe {
+  text-align: left;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 22px;
+ }
+ .header {
+  width: 100%;
+ }
+ .back-button {
+  position: absolute;
+  /* top: 4px; */
+  left: 20px;
+  color: white;
+  font-size: 45px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  
+}
+
+.back-arrow {
+  margin-right: 5px;
+}

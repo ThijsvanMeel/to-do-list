@@ -1,34 +1,43 @@
 <template>
-    <div>
+  <router-link to="/" class="back-button">
+      <span class="back-arrow">&lt;</span>
+    </router-link>
+  <img class="header" src="../assets/header.png">
+  <div class="inputfields">
+    <div class="card geenfullwidth">
+      <div class="card-content">
+        <h2 class="voegtodotoe">maak todo aan</h2>
         <div class="field">
-      <label class="label">Todo</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Vul hier in wat je wilt gaan doen"
-          v-model="todonaam"
-        />
+          <label class="label">Todo</label>
+          <div class="control">
+            <input
+              class="inputedit"
+              type="text"
+              placeholder="Wat ga je doen?"
+              v-model="todonaam"
+            />
+          </div>
+        </div>
+
+        <div class="field field2">
+          <label class="label">Todo categorie</label>
+          <div class="control">
+            <input
+              class="inputedit"
+              type="text"
+              placeholder="welke categorie?"
+              v-model="todocatogorie"
+            />
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="field">
-      <label class="label">Todo categorie</label>
-      <div class="control">
-        <input
-          class="input"
-          type="text"
-          placeholder="Onder welke categorie valt het?"
-          v-model="todocatogorie"
-        />
-      </div>
-    </div>
     <div class="control">
-      <button class="button is-success" @click="saveTodo">OPSLAAN</button>
+      <button class="button mooieknop2" @click="saveTodo">OPSLAAN</button>
     </div>
-    </div>  
-     
-  </template>
+  </div>
+</template>
   
   <script>
   
