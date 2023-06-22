@@ -13,14 +13,14 @@
       <div class="navbar-menu" v-bind:class="{'is-active': isOpen}">
         <div class="navbar-end">
           <router-link to="/" class="navbar-item is-tab">Home</router-link>
-          <router-link to="/about" class="navbar-item is-tab">calender</router-link>
+          <router-link to="/about" class="navbar-item is-tab">kalender</router-link>
         </div>
       </div>
     </nav>
 
     <!-- tijd en datum -->
     <b><h1>Vandaag</h1></b>
-    <p class="datumentijd">{{ currentDateTime }}</p>
+    <p class="datumentijd"> {{ currentDateTime }} </p>
 
     <!-- zoekbalk -->
     <input class="zoekbalk" placeholder="🔍︎ Zoek" v-model="searchText">
@@ -43,7 +43,7 @@
     </div>
     <div class="opvulling">
       <h2 class="voegtoe">Voeg meer todo's toe</h2>
-      <P class="pijltje">⬇️</P>
+      <p class="pijltje">⬇️</P>
     </div>
     <!-- add todo knop -->
     <router-link :to="{name: 'Create' }" class="button mooieknop">+ Add Todo</router-link>
@@ -69,17 +69,18 @@ export default {
   },
   
   computed: {
-    filteredItems() {
-      if (!this.searchText) {
-        return this.items;
-      }
-      const searchTextLower = this.searchText.toLowerCase();
-      return this.items.filter(
-        (item) =>
-          item.todo_naam.toLowerCase().includes(searchTextLower)
-      );
-    },
+  filteredItems() {
+    if (!this.searchText) {
+      return this.items;
+    }
+    const searchTextLower = this.searchText.toLowerCase();
+    return this.items.filter(
+      (item) =>
+        item.todo_naam.toLowerCase().includes(searchTextLower) ||
+        item.todo_catogorie.toLowerCase().includes(searchTextLower)
+    );
   },
+},
   
   methods: {
     async getTodos() {
